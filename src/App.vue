@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <compBookListOne :book="books"></compBookListOne>
+        <compBookListTwo :book="books"></compBookListTwo>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import compBookListOne from "./components/BookListOne"
+import compBookListTwo from "./components/BookListTwo"
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    data(){
+        return{
+            books: [
+              {name: "Harry Potter", price: 100},
+              {name: "Lord of The Rings", price: 150},
+              {name: "Night Circus", price: 90},
+              {name: "Lost World", price: 200}
+            ]
+        }
+    },
+    components:{
+      compBookListOne,
+      compBookListTwo
+    }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
